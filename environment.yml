@@ -1,21 +1,22 @@
-name: bdranalytics
+name: bdranalytics-py3
 dependencies:
 - cmake
 - boost
 - tensorflow
 - pkgconfig
-- python=2.7
+- python==3.6.2
 - numpy>=1.6.1
 - scipy>=0.9
 - scikit-learn>=0.18
 - pytest
 - jupyter
 - matplotlib
-- pandas
+- pandas=0.20
 - statsmodels
 - conda-forge::xgboost=0.6a2
 - seaborn
 - pip
+- ipykernel # this allows jupyter to find this env and use it as kernel
 - pip:
   - pandas_profiling
   - pytest-runner

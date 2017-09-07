@@ -122,17 +122,19 @@ class StringIndexer(BaseEstimator, TransformerMixin):
         self.columns = list()
 
     def fit(self, X, y=None):
+        #X = X.applymap(str)
         self.columns = X.columns.values
         for col in self.columns:
-            categories = np.unique(X[col])
+            categories = X[col].unique() #np.unique(X[col])
             self.dictionaries[col] = dict(zip(categories, range(len(categories))))
         return self
 
     def transform(self, X):
+        #X = X.applymap(str)
         column_array = []
         for col in self.columns:
             dictionary = self.dictionaries[col]
-            na_value = len(dictionary) + 1
+            na_value = len(dictionary)
             transformed_column = X[col].apply(lambda x: dictionary.get(x, na_value))
             column_array.append(transformed_column.values.reshape(-1, 1))
         return np.hstack(column_array)
