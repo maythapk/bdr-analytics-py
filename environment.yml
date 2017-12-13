@@ -3,6 +3,7 @@ dependencies:
 - cmake
 - boost
 - tensorflow
+- keras
 - pkgconfig
 - python=2.7
 - numpy>=1.6.1
@@ -17,6 +18,7 @@ dependencies:
 - seaborn
 - pip
 - pip:
+  - tensorboard
   - pandas_profiling
   - pytest-runner
   - -rrequirements.txt

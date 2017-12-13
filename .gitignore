@@ -8,3 +8,5 @@
 .cache
 .ipynb_checkpoints
 /build
+tensorboardlog
+notebooks/logs/
